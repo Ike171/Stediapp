@@ -36,7 +36,7 @@ const Profile = (props) => {
 
   return (
     <SafeAreaView style={{flex: 1}}>
-         <Card style={{backgroundColor:'white', borderRadius: 10, margin:20 ,width: 320, shadowColor: "#000",
+         <Card style={{backgroundColor:'#A71930', borderRadius: 10, margin:20 ,width: 320, shadowColor: "#EE4B2B",
 shadowOffset: {
 	width: 0,
 	height: 2,
@@ -46,11 +46,11 @@ shadowRadius: 2.62,
 
 elevation: 4}}>
      <CardContent>
-     <Image style={{height: 100, width:100, borderRadius: 75}}
-      source={require('../image/me.jpg')} />
-    <Text style={{marginTop:10,marginBottom:10,fontWeight: 'bold'}}>Sarah Romero</Text>
+     <Image style={{height: 250, width:250, borderRadius: 75}}
+      source={require('../image/ATL.jpg')} />
+    <Text style={{marginTop:10,marginBottom:10,fontWeight: 'bold'}}>Isaac Frankman</Text>
 
-    <Text style={{marginTop:20,marginBottom:2}}>This Week's progress</Text>
+    <Text style={{marginTop:20,marginBottom:2}}>Isaac is the Goat</Text>
 {/* <BarChart barColor='green' data={data} horizontalData={horizontalData} /> */}
      <View style={{ marginTop: 50 }}>
       <Button onPress={myCustomerShare} title="Share" />
