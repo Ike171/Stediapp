@@ -75,7 +75,7 @@ shadowOffset: {
 },
 shadowOpacity: 0.23,
 shadowRadius: 2.62,
-
+//comit
 elevation: 4}}>
      <CardContent>
      <Image style={{height: 100, width:100, borderRadius: 75}}
