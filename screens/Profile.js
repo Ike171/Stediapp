@@ -23,7 +23,7 @@ useEffect(()=>{
   const getUserName= async()=>{
     const cameraPermission = await Camera.requestCameraPermissionsAsync();
     setCameraPermission(cameraPermission);
-  const userName = await AsyncStorage.getItem('userName');
+  const userName = await AsyncStorage.getItem('userEmail');
   setUserName(userName);
   await AsyncStorage.removeItem('profilePhoto')
   const profilePhoto = await AsyncStorage.getItem('profilePhoto');
@@ -53,7 +53,7 @@ useEffect(()=>{
               <View style={styles.buttonContainer}>                         
                 {cameraReady?<TouchableOpacity style={styles.button} onPress={async ()=>{                         
                                           
-                  const picture = await cameraRef.current.takePictureAsync(cameraOptions);                          
+                  const picture = await cameraRef.current.takePictureAsync(cameraOptions); //maybe here?                         
                   console.log('Picture', picture);                          
                   await AsyncStorage.setItem('profilePhoto', picture.uri);                          
                   setProfilePhoto(picture.uri);                         
