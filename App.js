@@ -40,10 +40,10 @@ const App = () =>{
    if (isFirstLaunch == true &&! isLoggedIn){
 return(
   <OnboardingScreen setFirstLaunch={setFirstLaunch}/>
- 
-);
+  
+  );
   }else if(isLoggedIn){ //start here
-    return <Navigation/>
+    return <Navigation setHomeTodayScore={setHomeTodayScore}/>
   } else { 
     return (
       <View>
@@ -97,7 +97,7 @@ return(
               headers:{
                 'content-type' : 'application/text'
             },
-            body:JSON.stringify({
+            body: JSON.stringify({
               phoneNumber,
               oneTimePassword:tempCode 
             })

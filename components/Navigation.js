@@ -45,7 +45,7 @@ const HomeStackScreen = (props) =>{
 }
 
 
-const CounterStackScreen = () =>{
+const CounterStackScreen = (props) =>{
     return(
      <Stack.Navigator
      screenOptions= {{
@@ -53,6 +53,7 @@ const CounterStackScreen = () =>{
         headerTintColor:'white'}}
      >
         <Stack.Screen name="Counter" component={Counter} options={{
+            setHomeTodayScore: props.setHomeTodayScore,
              headerTitleAlign: "center",
              headerTitleStyle:{
                fontWeight:'bold', 
@@ -150,7 +151,7 @@ export default function Navigation (props) {
              
             <Tab.Screen  name="TabHome"
             // component={HomeStackScreen} 
-            children={()=><HomeStackScreen homeTodayScore={props.homeTodayScore}/>}
+            children={()=><HomeStackScreen setHomeTodayScore={props.setHomeTodayScore}/>}
             options={{
                // tabBarColor:'pink',
                   tabBarLabel: 'Home',
@@ -162,7 +163,7 @@ export default function Navigation (props) {
             />
             <Tab.Screen name="TabCounter" 
             // component={counterStackScreen}
-            children={()=><CounterStackScreen setHomeTodayScore={props.setHomeTodayScore}/>}
+            children={()=><CounterStackScreen/>}
             options={{
                 // tabBarColor:'pink',
                    tabBarLabel: 'Counter',
