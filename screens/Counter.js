@@ -23,6 +23,16 @@ export default function Counter(props) {
  const [score, setScore] = useState(0);
 
  const [currentScreen, setCurrentScreen] = useState('counter');
+
+ useEffect(() =>{
+  const getUserName = async ()=>{
+    getUserName.current=await AsyncStorage.getItem('userEmail');
+    console.log('counter userName', userName.current);
+  token.current = await AsyncStorage.getItem('sessionToken');
+console.log('token:' ,token.current);
+ };
+ getUserName();
+},[]);
 useEffect(()=>{
   if (currentScreen == 'counter'){
     if (completionCount == 1){
@@ -137,7 +147,7 @@ try{
 const scoreObject = await scoreResponse.json();
 console.log("score:",scoreObject.score);
 setScore(scoreObject.score);
-props.setHomeTodayScore(scoreObject.score);
+//props.setHomeTodayScore(scoreObject.score);
 }catch(error){
   console.log('error', error);
  }
